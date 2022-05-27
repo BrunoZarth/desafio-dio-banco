@@ -1,21 +1,12 @@
+import lombok.Data;
 
+@Data
 public class Cliente {
 	
 	public String nome;
 	public Conta conta;
 	
 
-	public String getNome() {
-		return nome;
-	}
-	
-	public Conta getConta() {
-		return conta;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
 	
 	public Cliente(String nome, Conta conta) {
 		this.nome = nome;

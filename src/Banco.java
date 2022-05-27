@@ -1,18 +1,15 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.Data;
+
+@Data
 public class Banco {
 	
 	private String nome;
 	static List<Cliente> listaDeClientes = new ArrayList<>();
 
-	public String getNome() {
-		return nome;
-	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
 	
 	public Cliente novoCliente(String nome, String tipoDeConta) {
 		
