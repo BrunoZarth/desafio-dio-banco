@@ -1,3 +1,7 @@
+import java.security.Timestamp;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import lombok.Data;
 
 @Data
@@ -38,12 +42,14 @@ public class Cliente {
 	}
 	
 	public void imprimirInfosDaTransacao(String tipoDaTransacao, double valor) {
+		String data = DateTimeFormatter.ofPattern("yyy-MM-dd HH:mm:ss").format(LocalDateTime.now());
 		String valorFormatado = "R$" + String.valueOf(valor).replace(".", ",") + "0";
-		System.out.printf("%s de %s efetuado com sucesso na conta de %s. \n", tipoDaTransacao, valorFormatado, this.getNome());
+		System.out.printf("%s %s de %s efetuado com sucesso na conta de %s. \n", data, tipoDaTransacao, valorFormatado, this.getNome());
 	}
 	
 	public void imprimirInfosDaTransacao(String tipoDaTransacao, double valor, Cliente clienteDestino) {
+		String data = DateTimeFormatter.ofPattern("yyy-MM-dd HH:mm:ss").format(LocalDateTime.now());
 		String valorFormatado = "R$" + String.valueOf(valor).replace(".", ",") + "0";
-		System.out.printf("%s de %s de %s para a conta de %s iniciada... \n", tipoDaTransacao, valorFormatado, this.getNome(), clienteDestino.getNome());
+		System.out.printf("%s %s de %s de %s para a conta de %s iniciada... \n", data, tipoDaTransacao, valorFormatado, this.getNome(), clienteDestino.getNome());
 	}
 }
