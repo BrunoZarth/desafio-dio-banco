@@ -38,6 +38,7 @@ public class Banco {
 	}
 	
 	public void getListaDeClientes(){
+		System.out.println("________________________________________________");
 		for(Cliente cliente : Banco.listaDeClientes) {
 			cliente.imprimirInfosDaConta();
 			System.out.println("--------------");
